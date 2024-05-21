@@ -4,7 +4,7 @@ class Monster:
         self.health = health
         self.damage = damage
     
-    def attacK(self):
+    def attack(self):
         return self.damage
     
 testMon = Monster("Goblin", 10, 2)
