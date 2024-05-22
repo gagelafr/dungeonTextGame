@@ -39,7 +39,7 @@ def startgame():
                 print("Your map has been created!")
                 print(map.printMap(game_map))
                 
-                
+                # Close the choice loop
                 choiceLoop = False
 
             elif choice == "N":

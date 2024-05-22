@@ -30,8 +30,22 @@ class Player:
     def setPosition(self, position):
         self.position = position
     
-   # def movePlayer(self, direction):
+    def movePlayer(self, direction):
+        x, y = self.position
+    
+        if direction == "N":
+            self.position = (x, y - 1)
+        elif direction == "S":
+            self.position = (x, y + 1)
+        elif direction == "E":
+            self.position = (x + 1, y)
+        elif direction == "W":
+            self.position = (x - 1, y)
+        else:
+            print("Invalid Direction")
         
 
 testPlayer = Player("Hero")
+testPlayer.movePlayer("N")
+print(testPlayer.getPosition())
 
