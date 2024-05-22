@@ -21,6 +21,8 @@ def startgame():
             if choice == "Y":
                 # Create the game map and populate it with monsters
                 game_map = map.createMap(5, 5)
+                # Create the game map and populate it with monsters
+                game_map = map.createMap(5, 5)
                 map.populateMap(game_map)
                 
                 # Find the furthest cell from monsters and place the player there
@@ -30,6 +32,7 @@ def startgame():
                 # Show the game map
                 print("Your map has been created!")
                 print(map.printMap(game_map))
+                
                 
                 choiceLoop = False
 
