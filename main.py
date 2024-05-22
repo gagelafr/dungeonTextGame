@@ -19,15 +19,21 @@ def startgame():
             choice = processChoice(input('Type "Y" or "N"\n'))
 
             if choice == "Y":
+                print("Great! Let's get started!\n")
+
+                # Generate Player
+                player = Player("Hero")
+
                 # Create the game map and populate it with monsters
                 game_map = map.createMap(5, 5)
+
                 # Create the game map and populate it with monsters
                 game_map = map.createMap(5, 5)
                 map.populateMap(game_map)
                 
                 # Find the furthest cell from monsters and place the player there
-                player_position = map.findFurthestCell(game_map)
-                game_map[player_position] = Player("Hero")
+                player.setPosition(map.findFurthestCell(game_map))
+                game_map[player.getPosition()] = player
 
                 # Show the game map
                 print("Your map has been created!")
