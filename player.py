@@ -45,7 +45,3 @@ class Player:
             print("Invalid Direction")
         
 
-testPlayer = Player("Hero")
-testPlayer.movePlayer("N")
-print(testPlayer.getPosition())
-
