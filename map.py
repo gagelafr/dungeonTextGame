@@ -60,6 +60,7 @@ def printMap(map):
     return ""
 
 def moveObject(map, position, new_position):
-    map[new_position] = map[position]
+    object = map[position]
+    map[new_position] = object
     map[position] = None
     return map

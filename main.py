@@ -33,16 +33,38 @@ def main():
         
         # Game Loop
         while(not gameOver):
-            # Player Movement
 
-            choice = move()
+            # Ask the Player for their choice
+            map.printMap(game_map)
+            choice = input("Would you like to move, attack, or quit? (M/A/Q)\n")
+            choice = processChoice(choice)
 
-            # Move the playery
-            player.updatePosition(choice)
-            print("Player has moved to: " + str(player.getPosition()) + "\n")
+            # Process the Player's choice
+            # Quit
+            if choice == "Q":
+                print("Thank you for playing!")
+                gameOver = True
+                break
+            
+            # Attack
+            elif choice == "A":
+                print("Player has attacked")
 
-            # Show the game map
-            #print(map.printMap(game_map))
+            # Move
+            elif choice == "M":
+                # Ask which direction the player would like to move and store the choice
+                choice = move()
+                # Store the player's current position
+                old_position = player.getPosition()
+                # Update the player's position
+                player.updatePosition(choice)
+                # Sotre the player's new position
+                new_position = player.getPosition()
+                # Move the player on the map
+                map.moveObject(game_map, old_position, new_position)
+                # Print the coordinates of the player
+                print("Player has moved to: " + str(player.getPosition()) + "\n")
+
         gameOver = True
 
 

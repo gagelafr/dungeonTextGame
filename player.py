@@ -31,16 +31,16 @@ class Player:
         self.position = position
     
     def updatePosition(self, direction):
-        x, y = self.position
+        y, x = self.position
     
-        if direction == "N":
-            self.position = (x, y - 1)
-        elif direction == "S":
-            self.position = (x, y + 1)
-        elif direction == "E":
-            self.position = (x + 1, y)
-        elif direction == "W":
-            self.position = (x - 1, y)
+        if direction == "N" and y > 0:
+            self.position = (y - 1, x)
+        elif direction == "S" and y < 5:
+            self.position = (y + 1, x)
+        elif direction == "E" and x < 5:
+            self.position = (y, x + 1)
+        elif direction == "W" and x > 0:
+            self.position = (y, x - 1)
         else:
             print("Invalid Direction")
         
