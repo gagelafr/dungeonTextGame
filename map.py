@@ -7,12 +7,12 @@ def createMap(x, y):
     map = np.empty((x, y), dtype=object)
     return map
 
-
+# Weight by level??
 def populateMap(map, probability = 0.5):
     for i in range(map.shape[0]):
         for j in range(map.shape[1]):
             if random.random() < probability:
-                map[i, j] = monster.testMon
+                map[i, j] = monster.testMonsters[random.randint(0, len(monster.testMonsters) - 1)]
     return map
 
 def findFurthestCell(map):
@@ -23,7 +23,7 @@ def findFurthestCell(map):
     # Step 1: Identify all monster positions
     for i in range(rows):
         for j in range(cols):
-            if map[i, j] == monster.testMon:
+            if map[i, j] == monster.testMonsters[0] or map[i, j] == monster.testMonsters[1] or map[i, j] == monster.testMonsters[2]:
                 queue.append((i, j))
                 distances[i, j] = 0
 
