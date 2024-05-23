@@ -30,7 +30,7 @@ class Player:
     def setPosition(self, position):
         self.position = position
     
-    def movePlayer(self, direction):
+    def updatePosition(self, direction):
         x, y = self.position
     
         if direction == "N":

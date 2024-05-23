@@ -58,4 +58,8 @@ def printMap(map):
                 print(map[i, j].name, end = " ")
         print("\n")
     return ""
-    
+
+def moveObject(map, position, new_position):
+    map[new_position] = map[position]
+    map[position] = None
+    return map
