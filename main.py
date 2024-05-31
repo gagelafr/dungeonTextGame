@@ -46,7 +46,7 @@ def main():
                 gameOver = True
                 break
             
-            # Attack
+            # Attack **Not Implemented**
             elif choice == "A":
                 print("Player has attacked")
 

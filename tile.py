@@ -1,10 +1,12 @@
+import monster
+
 class Tile:
 
     def init(self):
         self.type = "Grass"
         self.position = (0, 0)
         self.monster = None
-        self.player = None
+        self.hasPlayer = False
 
     # Getters
     def getType(self):
